@@ -1,7 +1,7 @@
 'use client'
 export default function Scores() {
-    const ticTacToe = myStorage.getItem("tictactoe");
-    const hangman = myStorage.getItem("hangman");
+    const ticTacToe = localStorage.getItem("tictactoe");
+    const hangman = localStorage.getItem("hangman");
     return (
         <div className="stats stats-vertical lg:stats-horizontal shadow">
 
@@ -19,4 +19,4 @@ export default function Scores() {
     )
 }
 
-export const myStorage = localStorage;
+

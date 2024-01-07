@@ -1,10 +1,10 @@
 'use client'
 
 import {useState} from "react";
-import {myStorage} from "@/app/games/scores/page";
 
 export default function TicTacToe() {
-    const [scores, setScores] = useState(myStorage.getItem("tictactoe"));
+   
+    const [scores, setScores] = useState(localStorage.getItem("tictactoe"));
 
     return (
 
@@ -14,14 +14,14 @@ export default function TicTacToe() {
             <div className="card-actions justify-between">
                 <button className="btn btn-primary" onClick={() => {
                     setScores((parseInt(scores) + 10).toString());
-                    myStorage.setItem("tictactoe", (parseInt(scores) + 10).toString());
-                    console.log(myStorage.getItem("tictactoe"));
+                    localStorage.setItem("tictactoe", (parseInt(scores) + 10).toString());
+                    console.log(localStorage.getItem("tictactoe"));
                 }}>Add scores
                 </button>
                 <button className="btn glass">{scores}</button>
                 <button className="btn btn-warning" onClick={() => {
                     setScores("0");
-                    myStorage.setItem("tictactoe", "0")
+                    localStorage.setItem("tictactoe", "0")
                 }}>Reset scores
                 </button>
             </div>
